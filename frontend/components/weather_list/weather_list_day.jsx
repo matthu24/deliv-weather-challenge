@@ -14,11 +14,11 @@ export default props => {
   }
   let imageFile;
     if(firstDay.weather[0].main === 'Rain'){
-      imageFile = 'https://s3.us-east-2.amazonaws.com/thelocallist/Rain.png'
+      imageFile = 'https://s3.us-east-2.amazonaws.com/thelocallist/Rain2.png'
     } else if(firstDay.weather[0].main === 'Clouds'){
-      imageFile = 'https://s3.us-east-2.amazonaws.com/thelocallist/Clouds.png'
+      imageFile = 'https://s3.us-east-2.amazonaws.com/thelocallist/Clouds2.png'
     }  else if(firstDay.weather[0].main === 'Clear'){
-      imageFile = 'https://s3.us-east-2.amazonaws.com/thelocallist/Clear.png'
+      imageFile = 'https://s3.us-east-2.amazonaws.com/thelocallist/Clear2.png'
     }
   return(
     <div className='weather-day'>
