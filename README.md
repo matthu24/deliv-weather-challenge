@@ -20,6 +20,23 @@ Here is an example subarray representing a day's worth of data point objects, as
 ]
 ```
 
+To track the high and low temperatures for the day, I wrote a greedy algorithm as shown below:
+
+```javascript
+let lowTemp = data[0].main.temp;
+let highTemp = data[0].main.temp;
+data.forEach(object => {
+  //update highs and lows
+  if(object.main.temp < lowTemp){
+    lowTemp = object.main.temp;
+  }else if(object.main.temp > highTemp){
+    highTemp = object.main.temp;
+  }
+  
+ //...
+ ```
+
+
 The tricky thing about the parser function is that depending on the 
 time of day the api call is made, each day may have more or less data points than the other days, specifically, the
 first and last days would have less data points than the days in the middle. To account for this, I allowed the 
