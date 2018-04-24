@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 
@@ -17,10 +16,7 @@ class Search extends React.Component{
   }
 
   onChange(field){
-    console.log(this.state)
-
     return(e) => {
-
       this.setState({[field]:e.target.value})
     }
   }

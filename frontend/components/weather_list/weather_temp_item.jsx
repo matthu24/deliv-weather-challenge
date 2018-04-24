@@ -11,7 +11,6 @@ const timeTransform = str => {
   }
 }
 
-
 export default props => {
   let temp;
   let time;

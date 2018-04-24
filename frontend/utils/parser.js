@@ -1,6 +1,5 @@
 export const parser = data => {
-  //iterate through data, and for each list item, access listItem.dt_txt indices 8 and 9
-  // 9 AM, 12, 15, 18 and 21
+
   //ALL days MUST have 7 objects, regardless of whether or not there is data for them
   let days = [];
   let currentDate = data[0].dt_txt.slice(8,10);//should be '24'
@@ -45,7 +44,6 @@ export const parser = data => {
     currentDayArray.push({high:highTemp});
     currentDayArray.push({low:lowTemp})
     days.push(currentDayArray);
-
   }
 
   return days;
