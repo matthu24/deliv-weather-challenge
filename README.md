@@ -8,7 +8,7 @@ The open weather map API (https://openweathermap.org/forecast5) gives five full 
 
 ## Component Structure 
 
-I used to parent components in this application: the first is the search component, and the second is the weather_list component.  The weather_list component embodies all the weather data in the UI.  The weather_list_day component is a child component of weather_list, and renders one day's slice of data.  Lastly, weather_temp_item is a child component of weather_list_day and handles each temperature item in the temperature list at the bottom of the app. 
+I used two parent components in this application: the first is the search component, and the second is the weather_list component.  The weather_list component embodies all the weather data in the UI.  The weather_list_day component is a child component of weather_list, and renders one day's slice of data.  Lastly, weather_temp_item is a child component of weather_list_day and handles each temperature item in the temperature list at the bottom of the app. 
 
 ## Code Snippets
 
