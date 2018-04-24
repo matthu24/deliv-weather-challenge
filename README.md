@@ -41,6 +41,5 @@ data.forEach(object => {
 The tricky thing about the parser function is that depending on the 
 time of day the api call is made, each day may have more or less data points than the other days, specifically, the
 first and last days would have less data points than the days in the middle. To account for this, I allowed the 
-parser function to check if the first and last days had less data points than the days in the middle, and push in empty objects to account for 
-this.  The reason for wanting an equal number of data points in the days subarrays is so that it would be 
+parser function to check if the first and last days had less data points than the days in the middle, and to push in empty objects if this were the case.  The reason for wanting an equal number of data points in the days subarrays is so that it would be 
 easier to render in an html table later.  
