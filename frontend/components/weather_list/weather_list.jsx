@@ -7,10 +7,6 @@ class WeatherList extends React.Component{
     super(props);
   }
 
-  componentDidMount(){
-
-
-  }
   render(){
     if(!this.props.weather.list) return null;
     //list is an array of objects

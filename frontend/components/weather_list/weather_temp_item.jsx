@@ -5,9 +5,9 @@ const timeTransform = str => {
   if(timeInt === 12){
     return String(timeInt) + 'PM';
   }else if(timeInt > 12){
-    return ' ' + String(timeInt-12) + 'PM'
+    return String(timeInt-12) + 'PM '
   }else{
-    return ' ' + String(timeInt) + 'AM';
+    return String(timeInt) + 'AM ';
   }
 }
 
@@ -18,7 +18,7 @@ export default props => {
   temp = props.object.main ? String(Math.floor(parseInt(props.object.main.temp)))+'°' : null;
   time = props.object.main ? timeTransform(props.object.dt_txt.slice(11,13)) : null;
   let tempElement = temp ? (
-    <div><span className='time'>{time}</span>&nbsp; &nbsp; &nbsp;  {temp}</div>
+    <div><span className='time'>{time}</span>&nbsp;&nbsp;&nbsp; {temp}</div>
   ) : (
     <div>&nbsp;</div>
   )
