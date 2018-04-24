@@ -35,6 +35,9 @@ color: white;
   justify-content: center;
   align-items: center;
 }
+.weather-list:last-child{
+  border-right: none;
+}
 
 .weather-list-container{
   display: flex;
@@ -51,7 +54,8 @@ color: white;
   padding: 30px;
   justify-content: center;
   align-items: center;
-  border: 1px solid gray;
+  border-right: 0.5px solid gray;
+
 }
 
 .temp-list{
