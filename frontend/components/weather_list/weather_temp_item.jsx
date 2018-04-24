@@ -5,9 +5,9 @@ const timeTransform = str => {
   if(timeInt === 12){
     return String(timeInt) + 'PM';
   }else if(timeInt > 12){
-    return String(timeInt-12) + 'PM '
+    return String(timeInt-12) + 'PM'
   }else{
-    return String(timeInt) + 'AM ';
+    return String(timeInt) + 'AM';
   }
 }
 
@@ -25,7 +25,6 @@ export default props => {
   return(
     <div>
       {tempElement}
-
     </div>
   )
 }
