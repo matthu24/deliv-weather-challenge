@@ -1,0 +1,12 @@
+.weather-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.weather-day{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}

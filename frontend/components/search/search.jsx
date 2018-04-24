@@ -5,10 +5,15 @@ import React from 'react';
 class Search extends React.Component{
   constructor(props){
     super(props);
-    this.state={zip:''}
+    this.state={zip:'95035'}
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
 
+  }
+
+  componentDidMount(){
+    this.props.fetchAllWeather(this.state.zip);
+    this.props.storeZip(this.state.zip);
   }
 
   onChange(field){
@@ -24,7 +29,8 @@ class Search extends React.Component{
     e.preventDefault();
     //fire post request
     this.props.fetchAllWeather(this.state.zip);
-    console.log('submitted form')
+    this.props.storeZip(this.state.zip);
+    this.setState({zip: ''})
   }
 
   render(){

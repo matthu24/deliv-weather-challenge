@@ -1,7 +1,7 @@
 import React from 'react';
 import Search from './search';
 import {connect} from 'react-redux';
-import {fetchAllWeather} from '../../actions/weather';
+import {fetchAllWeather, storeZip} from '../../actions/weather';
 
 
 const mapStateToProps = state => ({
@@ -9,8 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchAllWeather: zip => dispatch(fetchAllWeather(zip))
-
+  fetchAllWeather: zip => dispatch(fetchAllWeather(zip)),
+  storeZip: zip => dispatch(storeZip(zip))
 });
 
 export default connect(

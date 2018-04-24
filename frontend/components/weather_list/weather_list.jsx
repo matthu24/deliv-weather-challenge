@@ -1,5 +1,5 @@
 import React from 'react';
-import WeatherListItem from './weather_list_item';
+import WeatherListDay from './weather_list_day';
 import {parser} from '../../utils/parser';
 //weather[0].main: Rain, Clouds, Clear
 class WeatherList extends React.Component{
@@ -25,10 +25,10 @@ class WeatherList extends React.Component{
 
     console.log(days)
     return(
-      <div>
-        Weather List
+      <div className='weather-list'>
+        {this.props.weather.city.name}, {this.props.zip}
         {
-          list.map((weatherObject,id) => <WeatherListItem key={id} weatherObject={weatherObject}/>)
+          days.map((day,id) => <WeatherListDay key={id} day={day}/>)
         }
       </div>
     )
