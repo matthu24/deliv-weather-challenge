@@ -6,6 +6,12 @@ This is a single page weather forecast application using React.js, and a weather
 
 The open weather map API (https://openweathermap.org/forecast5) gives five full days of weather forecast: a data point for every 3 hours, resulting in 38 data points.
 
+##Component Structure 
+
+I used to parent components in this application: the first is the search component, and the second is the weather_list component.  The weather_list component embodies all the weather data in the UI.  The weather_list_day component is a child component of weather_list, and renders one day's slice of data.  Lastly, weather_temp_item is a child component of weather_list_day and handles each temperature item in the temperature list at the bottom of the app. 
+
+##Code Snippets
+
 An interesting piece of code I wrote for this application was a parser function, which takes a list of unorganized json weather data from an API call and groups them into five days: the function returns a container array, which holds five subarrays representing the five days, which in turn holds each day's data point objects.  Also contained in each day's subarray is the high and low temperature for the day.
 
 Here is an example subarray containing a day's worth of data point objects, as well as the high and low temperature:
