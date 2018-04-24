@@ -5,8 +5,7 @@ Live link: https://deliv-weather-challenge.herokuapp.com/#/
 Open weather map API gives five full days of weather forecast: a data point for every 3 hours, resulting in 
 38 data points.
 
-parser: took list of json weather data and grouped them into five days: each day's data point objects are contained in a subarray
-nested in a container array.  Also contained in each day's subarray   is the high and low temperature for the day.
+An interesting piece of code I wrote for this application was a parser function, which took list of unorganized json weather data from the API call and grouped them into five days: the function returns a container array, which holds five subarrays representing the five days, which in turn holds each day's data point objects.  Also contained in each day's subarray is the high and low temperature for the day.
 
 An example subarray representing a day's worth of data point objects, as well as the high and low temperature:
 [
