@@ -2,10 +2,11 @@
 
 Live link: https://deliv-weather-challenge.herokuapp.com/#/
 
-Open weather map API gives five full days of weather forecast: a data point for every 3 hours, resulting in 
-38 data points.
+This is a single page weather forecast application using React.js, and a weather API for weather forecast data.  Users can search cities by zip code and view weather data.
 
-An interesting piece of code I wrote for this application was a parser function, which takes a list of unorganized json weather data from the API call and groups them into five days: the function returns a container array, which holds five subarrays representing the five days, which in turn holds each day's data point objects.  Also contained in each day's subarray is the high and low temperature for the day.
+The open weather map API (https://openweathermap.org/forecast5) gives five full days of weather forecast: a data point for every 3 hours, resulting in 38 data points.
+
+An interesting piece of code I wrote for this application was a parser function, which takes a list of unorganized json weather data from an API call and groups them into five days: the function returns a container array, which holds five subarrays representing the five days, which in turn holds each day's data point objects.  Also contained in each day's subarray is the high and low temperature for the day.
 
 Here is an example subarray representing a day's worth of data point objects, as well as the high and low temperature:
 ```javascript
