@@ -7,7 +7,7 @@ Open weather map API gives five full days of weather forecast: a data point for 
 
 An interesting piece of code I wrote for this application was a parser function, which took list of unorganized json weather data from the API call and grouped them into five days: the function returns a container array, which holds five subarrays representing the five days, which in turn holds each day's data point objects.  Also contained in each day's subarray is the high and low temperature for the day.
 
-An example subarray representing a day's worth of data point objects, as well as the high and low temperature:
+Here is an example subarray representing a day's worth of data point objects, as well as the high and low temperature:
 [
 {dt: 1524992400, main: {…}, weather: Array(1), clouds: {…}, wind: {…}, …},
 {dt: 1525003200, main: {…}, weather: Array(1), clouds: {…}, wind: {…}, …},
@@ -21,6 +21,6 @@ An example subarray representing a day's worth of data point objects, as well as
 The tricky thing about the parser function is that depending on the 
 time of day the api call is made, each day may have more or less data points than the other days, specifically, the
 first and last days would have less data points than the days in the middle. To account for this, I allowed the 
-parser function to check if the first and last days had less data points, and push in empty objects to account for 
+parser function to check if the first and last days had less data points than the days in the middle, and push in empty objects to account for 
 this.  The reason for wanting an equal number of data points in the days subarrays is so that it would be 
 easier to render in an html table later.  
