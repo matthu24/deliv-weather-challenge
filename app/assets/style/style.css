@@ -1,9 +1,15 @@
 body{
   margin: 0 auto;
+  font-family: 'Neuton', serif;
 }
 
 input:focus{
   outline:none;
+}
+
+.header-img{
+  height: 90px;
+  width: 100%
 }
 
 .app{
@@ -13,13 +19,13 @@ input:focus{
   align-items: center;
 }
 
-.header{
+/*.header{
   top: 0;
 background: linear-gradient(to right, lightgreen , blue);
 height: 80px;
 margin-bottom: 40px;
 display:flex;
-flex-direction: row;
+flex-direction: column;
 align-items: center;
 justify-content: center;
 width: 100%;
@@ -27,6 +33,13 @@ z-index: 1;
 font-size: 35px;
 color: white;
 
+}*/
+
+.header{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .weather-list{

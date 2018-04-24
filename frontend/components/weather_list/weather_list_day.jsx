@@ -4,7 +4,7 @@ import WeatherTemp from './weather_temp_item';
 
 export default props => {
   console.log(props.day)
-  //we might have some empty objects in the day array 
+  //we might have some empty objects in the day array
   let firstDay;
   for(let i=0;i<props.day.length;i++){
     if(props.day[i].dt){
@@ -24,7 +24,7 @@ export default props => {
     <div className='weather-day'>
       <img className='weather-icon' src={imageFile} />
       <div>
-        {firstDay.dt_txt}
+        {firstDay.dt_txt.slice(0,10)}
 
       </div>
       <div>
