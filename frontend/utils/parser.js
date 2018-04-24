@@ -5,7 +5,10 @@ export const parser = data => {
   let currentDate = data[0].dt_txt.slice(8,10);//should be '24'
   let currentDayArray = [];
   data.forEach(object => {
-    currentDayArray.push(object);
+    if(parseInt(object.dt_txt.slice(11,13)) < 22 && parseInt(object.dt_txt.slice(11,13)) > 8 ){
+      currentDayArray.push(object);
+
+    }
     if(object.dt_txt.slice(8,10) !== currentDate){
       days.push(currentDayArray);
       currentDate = object.dt_txt.slice(8,10);
