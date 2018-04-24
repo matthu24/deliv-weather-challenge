@@ -2,6 +2,20 @@ import React from 'react';
 import WeatherTemp from './weather_temp_item';
 //five days, eight different times per day, 3 hour increments between each time
 
+const dayTransform = str => {
+  let days = ['Mon','Tues','Wed','Thurs','Fri','Sat','Sun'];
+  let date = new Date(str);
+  let dayOfWeek = days[date.getDay()];
+  return dayOfWeek;
+}
+
+//2018-04-27 => Apr 27, 2018
+const dateTransform = str => {
+  let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+  let month = months[parseInt(str.slice(5,7))-1];
+  return month + ' '+ str.slice(8,10) + ', ' +  str.slice(0,4)
+}
+
 export default props => {
   console.log(props.day)
   //we might have some empty objects in the day array
@@ -13,10 +27,9 @@ export default props => {
     }
   }
 
-  let days = ['Mon','Tues','Wed','Thurs','Fri','Sat','Sun'];
   let DateString = firstDay.dt_txt.slice(0,10);
-  let date = new Date(DateString);
-  let dayOfWeek = days[date.getDay()];
+  let dayOfWeek = dayTransform(DateString);
+  let date = dateTransform(DateString);
 
   let imageFile;
     if(firstDay.weather[0].main === 'Rain'){
@@ -30,7 +43,7 @@ export default props => {
     <div className='weather-day'>
       <img className='weather-icon' src={imageFile} />
       <div>
-        {dayOfWeek}, <span>{DateString}</span>
+        {dayOfWeek}, <span>{date}</span>
 
       </div>
       <div>
