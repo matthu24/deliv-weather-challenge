@@ -12,7 +12,7 @@ I used two parent components in this application: the first is the search compon
 
 ## Code Snippets
 
-An interesting piece of code I wrote for this application was a parser function, which takes a list of unorganized json weather data from an API call and groups them into five days: the function returns a container array, which holds five subarrays representing the five days, which in turn holds each day's data point objects.  Also contained in each day's subarray is the high and low temperature for the day.
+An interesting piece of code I wrote for this application is a parser function, which takes a list of unorganized json weather data from an API call and groups them into five days: the function returns a container array, which holds five subarrays representing the five days, which in turn holds each day's data point objects.  Also contained in each day's subarray is the high and low temperature for the day.
 
 Here is an example subarray containing a day's worth of data point objects, as well as the high and low temperature:
 ```javascript
