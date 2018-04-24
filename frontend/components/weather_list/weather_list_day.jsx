@@ -12,6 +12,12 @@ export default props => {
       break;
     }
   }
+
+  let days = ['Mon','Tues','Wed','Thurs','Fri','Sat','Sun'];
+  let DateString = firstDay.dt_txt.slice(0,10);
+  let date = new Date(DateString);
+  let dayOfWeek = days[date.getDay()];
+
   let imageFile;
     if(firstDay.weather[0].main === 'Rain'){
       imageFile = 'https://s3.us-east-2.amazonaws.com/thelocallist/Rain2.png'
@@ -24,14 +30,14 @@ export default props => {
     <div className='weather-day'>
       <img className='weather-icon' src={imageFile} />
       <div>
-        {firstDay.dt_txt.slice(0,10)}
+        {dayOfWeek}, <span>{DateString}</span>
 
       </div>
       <div>
         {firstDay.weather[0].description}
       </div>
       <div>
-        {Math.floor(parseInt(props.day[props.day.length-2].high))}° {Math.floor(parseInt(props.day[props.day.length-1].low))}°
+        {Math.floor(parseInt(props.day[props.day.length-2].high))}° <span className='low-temp'>{Math.floor(parseInt(props.day[props.day.length-1].low))}°</span>
       </div>
       <div className='temp-list'>
 

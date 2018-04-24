@@ -48,7 +48,7 @@ color: white;
   justify-content: center;
   align-items: center;
 }
-.weather-list:last-child{
+.weather-day:last-child{
   border-right: none;
 }
 
@@ -68,7 +68,11 @@ color: white;
   justify-content: center;
   align-items: center;
   border-right: 0.5px solid gray;
+  background-color: #f2f2f2;
+}
 
+.weather-day:hover{
+  background-color: lightgray;
 }
 
 .temp-list{
@@ -78,6 +82,7 @@ color: white;
 .weather-icon{
   height:120px;
   width: 120px;
+  margin-bottom: 8px;
 }
 
 .search{
@@ -85,5 +90,9 @@ color: white;
 }
 
 .time{
-  color: lightgray;
+  color: gray;
+}
+
+.low-temp{
+  color:gray;
 }
