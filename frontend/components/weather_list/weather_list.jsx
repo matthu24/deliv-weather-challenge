@@ -25,11 +25,14 @@ class WeatherList extends React.Component{
 
     console.log(days)
     return(
+      <div className='weather-list-container'>
+      {this.props.weather.city.name}, {this.props.zip}
+
       <div className='weather-list'>
-        {this.props.weather.city.name}, {this.props.zip}
         {
           days.map((day,id) => <WeatherListDay key={id} day={day}/>)
         }
+      </div>
       </div>
     )
   }

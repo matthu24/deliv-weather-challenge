@@ -4,17 +4,38 @@ export const parser = data => {
   let days = [];
   let currentDate = data[0].dt_txt.slice(8,10);//should be '24'
   let currentDayArray = [];
+  let lowTemp = data[0].main.temp;
+  let highTemp = data[0].main.temp;
   data.forEach(object => {
+    if(object.main.temp < lowTemp){
+      lowTemp = object.main.temp;
+    }else if(object.main.temp > highTemp){
+      highTemp = object.main.temp;
+    }
     if(parseInt(object.dt_txt.slice(11,13)) < 22 && parseInt(object.dt_txt.slice(11,13)) > 8 ){
       currentDayArray.push(object);
-
     }
+    //new day
     if(object.dt_txt.slice(8,10) !== currentDate){
+      currentDayArray.push({high:highTemp});
+      currentDayArray.push({low:lowTemp})
       days.push(currentDayArray);
+
+      lowTemp = object.main.temp;
+      highTemp = object.main.temp;
       currentDate = object.dt_txt.slice(8,10);
       currentDayArray = [];
     }
   })
-  days.push(currentDayArray);
+  // currentDayArray.push({high:highTemp});
+  // currentDayArray.push({low:lowTemp})
+  // days.push(currentDayArray);
+  if(currentDayArray.length>0){
+    currentDayArray.push({high:highTemp});
+    currentDayArray.push({low:lowTemp})
+    days.push(currentDayArray);
+
+  }
+
   return days;
 }

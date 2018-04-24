@@ -1,7 +1,42 @@
+body{
+  margin: 0 auto;
+}
+.app{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header{
+
+
+  top: 0;
+background: linear-gradient(to right, yellow , red);
+height: 80px;
+margin-bottom: 40px;
+display:flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+width: 100%;
+z-index: 1;
+font-size: 35px;
+
+}
+
 .weather-list{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+}
+
+.weather-list-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -9,4 +44,13 @@
   display: flex;
   flex-direction: column;
   padding: 30px;
+}
+
+.temp-list{
+  margin-top: 60px;
+}
+
+.weather-icon{
+  height:120px;
+  width: 120px;
 }
