@@ -4,6 +4,7 @@ import WeatherTemp from './weather_temp_item';
 
 export default props => {
   console.log(props.day)
+  //we might have some empty objects in the day array 
   let firstDay;
   for(let i=0;i<props.day.length;i++){
     if(props.day[i].dt){
@@ -30,7 +31,7 @@ export default props => {
         {firstDay.weather[0].description}
       </div>
       <div>
-        {props.day[props.day.length-2].high} {props.day[props.day.length-1].low}
+        {Math.floor(parseInt(props.day[props.day.length-2].high))}° {Math.floor(parseInt(props.day[props.day.length-1].low))}°
       </div>
       <div className='temp-list'>
 

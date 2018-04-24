@@ -1,6 +1,11 @@
 body{
   margin: 0 auto;
 }
+
+input:focus{
+  outline:none;
+}
+
 .app{
   display: flex;
   flex-direction: column;

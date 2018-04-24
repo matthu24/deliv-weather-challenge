@@ -2,7 +2,7 @@ import React from 'react';
 
 export default props => {
   let temp;
-  temp = props.object.main ? Math.floor(parseInt(props.object.main.temp)) : null;
+  temp = props.object.main ? String(Math.floor(parseInt(props.object.main.temp)))+'°' : null;
   let tempElement = temp ? (
     <div>{temp}</div>
   ) : (
