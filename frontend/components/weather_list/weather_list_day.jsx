@@ -42,23 +42,19 @@ export default props => {
   return(
     <div className='weather-day'>
       <img className='weather-icon' src={imageFile} />
-      <div>
+      <div className='date'>
         {dayOfWeek}, <span>{date}</span>
-
       </div>
-      <div>
+      <div className='temp-description'>
         {firstDay.weather[0].description}
       </div>
-      <div>
+      <div className='high-low-temp'>
         {Math.floor(parseInt(props.day[props.day.length-2].high))}° <span className='low-temp'>{Math.floor(parseInt(props.day[props.day.length-1].low))}°</span>
       </div>
       <div className='temp-list'>
-
           {
             props.day.slice(0,props.day.length-2).map((object,id) => <WeatherTemp object={object} key={id}/> )
           }
-
-
       </div>
     </div>
   )
