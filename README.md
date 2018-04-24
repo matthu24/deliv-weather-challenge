@@ -8,7 +8,7 @@ The open weather map API (https://openweathermap.org/forecast5) gives five full 
 
 An interesting piece of code I wrote for this application was a parser function, which takes a list of unorganized json weather data from an API call and groups them into five days: the function returns a container array, which holds five subarrays representing the five days, which in turn holds each day's data point objects.  Also contained in each day's subarray is the high and low temperature for the day.
 
-Here is an example subarray representing a day's worth of data point objects, as well as the high and low temperature:
+Here is an example subarray containing a day's worth of data point objects, as well as the high and low temperature:
 ```javascript
 [
 {dt: 1524992400, main: {…}, weather: Array(1), clouds: {…}, wind: {…}, …},
