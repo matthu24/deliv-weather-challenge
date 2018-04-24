@@ -5,9 +5,8 @@ export const parser = data => {
   let currentDate = data[0].dt_txt.slice(8,10);//should be '24'
   let currentDayArray = [];
   data.forEach(object => {
-    if(object.dt_txt.slice(8,10) === currentDate){
-      currentDayArray.push(object);
-    }else{
+    currentDayArray.push(object);
+    if(object.dt_txt.slice(8,10) !== currentDate){
       days.push(currentDayArray);
       currentDate = object.dt_txt.slice(8,10);
       currentDayArray = [];
