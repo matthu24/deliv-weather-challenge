@@ -1,6 +1,6 @@
 {
   "name": "deliv-weather-challenge",
-  "homepage": "http://matthu24.github.io/deliv-weather-challenge",
+  "homepage": "https://matthu24.github.io/deliv-weather-challenge",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,10 +10,13 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
+
     "webpack": "webpack --watch",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "postinstall": "webpack"
+    "build": "react-scripts build",
+    "start": "react-scripts start"
   },
   "keywords": [],
   "author": "",
