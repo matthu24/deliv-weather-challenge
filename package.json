@@ -2,7 +2,7 @@
   "name": "deliv-weather-challenge",
   "homepage": "https://matthu24.github.io/deliv-weather-challenge",
   "version": "1.0.0",
-  "description": "",
+
   "main": "index.js",
   "engines": {
     "node": "4.1.1",
