@@ -17,6 +17,9 @@ export const parser = data => {
     }
     //new day
     if(object.dt_txt.slice(8,10) !== currentDate){
+      while(currentDayArray.length !== 5){
+        currentDayArray.unshift({})
+      }
       currentDayArray.push({high:highTemp});
       currentDayArray.push({low:lowTemp})
       days.push(currentDayArray);
@@ -27,10 +30,11 @@ export const parser = data => {
       currentDayArray = [];
     }
   })
-  // currentDayArray.push({high:highTemp});
-  // currentDayArray.push({low:lowTemp})
-  // days.push(currentDayArray);
+
   if(currentDayArray.length>0){
+    while(currentDayArray.length!==5){
+      currentDayArray.push({})
+    }
     currentDayArray.push({high:highTemp});
     currentDayArray.push({low:lowTemp})
     days.push(currentDayArray);

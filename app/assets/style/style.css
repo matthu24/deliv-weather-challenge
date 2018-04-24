@@ -9,10 +9,8 @@ body{
 }
 
 .header{
-
-
   top: 0;
-background: linear-gradient(to right, yellow , red);
+background: linear-gradient(to right, lightgreen , blue);
 height: 80px;
 margin-bottom: 40px;
 display:flex;
@@ -22,6 +20,7 @@ justify-content: center;
 width: 100%;
 z-index: 1;
 font-size: 35px;
+color: white;
 
 }
 
@@ -43,7 +42,11 @@ font-size: 35px;
 .weather-day{
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
   padding: 30px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
 }
 
 .temp-list{
@@ -53,4 +56,8 @@ font-size: 35px;
 .weather-icon{
   height:120px;
   width: 120px;
+}
+
+.search{
+  margin-bottom: 20px;
 }
