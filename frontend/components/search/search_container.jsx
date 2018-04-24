@@ -9,6 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  fetchAllWeather: zip => dispatch(fetchAllWeather(zip))
 
 });
 
