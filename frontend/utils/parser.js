@@ -1,5 +1,5 @@
 export const parser = data => {
-
+//asdfsadf
   //ALL days MUST have 7 objects, regardless of whether or not there is data for them
   let days = [];
   let currentDate = data[0].dt_txt.slice(8,10);//should be '24'
