@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 class Search extends React.Component{
@@ -37,6 +39,9 @@ class Search extends React.Component{
           <input value={this.state.zip} onChange={this.onChange('zip')} className='search' placeholder='Search by zip code'></input>
           <input className = 'submit' type='submit'></input>
         </form>
+
+        <Link to="/chart">Charts</Link>
+        <Link to="/">Five Day Forecast</Link>
       </div>
     )
   }

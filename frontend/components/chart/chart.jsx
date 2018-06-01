@@ -5,6 +5,13 @@ import {chartUtil} from '../../utils/chart_util';
 class Chart extends React.Component{
   constructor(props){
     super(props);
+    this.state = {update:false}
+  }
+
+  componentDidMount(){
+    console.log('componentDidMount')
+    //so that a rerender is forced
+    this.setState({update:!this.state.update})
   }
 
 
@@ -43,6 +50,7 @@ class Chart extends React.Component{
       .range([padding * 2,chart_width - padding])
 
     var y_axis = d3.axisLeft(y_scale)
+      .ticks(4);
     // .tickValues([20,40,60,80,100,120])
 
     if(document.querySelector('#chart') && document.querySelector('#chart').children.length === 0){
@@ -89,8 +97,15 @@ class Chart extends React.Component{
   }
 
   render(){
+    if(!this.props.weather.city) return null;
     return(
-      <div id='chart'></div>
+      <div>
+        {this.props.weather.city.name}, {this.props.zip}
+
+        <div id='chart'></div>
+
+
+      </div>
     )
   }
 }
