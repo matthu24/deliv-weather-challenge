@@ -2,13 +2,10 @@
   "name": "deliv-weather-challenge",
   "homepage": "https://matthu24.github.io/deliv-weather-challenge",
   "version": "1.0.0",
-
   "main": "index.js",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "webpack",
-
     "webpack": "webpack --watch",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
@@ -25,6 +22,7 @@
     "babel-preset-react": "^6.24.1",
     "lodash": "^4.17.5",
     "react": "^16.3.2",
+    "react-d3-library": "^1.1.8",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",

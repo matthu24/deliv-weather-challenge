@@ -35,7 +35,7 @@ class Search extends React.Component{
         <form onSubmit={this.handleSubmit}>
 
           <input value={this.state.zip} onChange={this.onChange('zip')} className='search' placeholder='Search by zip code'></input>
-          <input type='submit'></input>
+          <input className = 'submit' type='submit'></input>
         </form>
       </div>
     )
