@@ -30,38 +30,32 @@ class Chart extends React.Component{
 
     //if there is no svg yet, add the svg, and do all the waiting room stuff
     //the check is to see if the chart div element has any svg children;
-    if(document.querySelector('#chart') && document.querySelector('#chart').children.length === 0){
+    var y_scale = d3.scaleLinear()
+      .domain([0,d3.max(tempData,function(d){
+        return d[1];
+      })])
+      .range([chart_height - padding ,padding])
 
+    var x_scale = d3.scaleLinear()
+      .domain([0,d3.max(tempData,function(d){
+        return d[0];
+      })])
+      .range([padding * 2,chart_width - padding])
+
+    var y_axis = d3.axisLeft(y_scale)
+    // .tickValues([20,40,60,80,100,120])
+
+    if(document.querySelector('#chart') && document.querySelector('#chart').children.length === 0){
 
       let svg = d3.select('#chart')
         .append('svg')
         .attr('width', chart_width)
         .attr('height', chart_height);
 
-      let y_scale = d3.scaleLinear()
-
-        .domain([0,d3.max(tempData,function(d){
-          return d[1];
-        })])
-        .range([chart_height - padding ,padding])
-
-      let x_scale = d3.scaleLinear()
-        .domain([0,d3.max(tempData,function(d){
-          return d[0];
-        })])
-        .range([padding * 2,chart_width - padding])
-
-
-      var y_axis = d3.axisLeft(y_scale)
-        // .tickValues([20,40,60,80,100,120])
-
       svg.append('g')
         .attr('class','y-axis')
         .attr('transform','translate(' + (padding*2) + ',0)')
         .call(y_axis)
-
-    //
-    // console.log(svg.selectAll('circle')._groups[0].length)
 
       svg.selectAll('circle')
         .data(tempData)
@@ -83,48 +77,18 @@ class Chart extends React.Component{
       //for updating the graph, when user enters a new zip code: don't have to make a new svg,
       //don't have to use waiting room, we can use the circle elements that already exist
       let svg = d3.select('#chart')
-            let y_scale = d3.scaleLinear()
 
-              .domain([0,d3.max(tempData,function(d){
-                return d[1];
-              })])
-              .range([chart_height - padding ,padding])
-
-            let x_scale = d3.scaleLinear()
-              .domain([0,d3.max(tempData,function(d){
-                return d[0];
-              })])
-              .range([padding * 2,chart_width - padding])
-
-
-            var y_axis = d3.axisLeft(y_scale)
-
-
-            svg.selectAll('circle')
-              .data(tempData)
-              .transition()
-              .duration(1000)
-              // .attr('cx', function(d){
-              //   return x_scale(d[0])
-              // })
-              .attr('cy',function(d){
-                return y_scale(d[1]);
-              })
-              // .attr('r','2px')
-              // .attr('fill','darkblue')
-              // .attr('stroke','blue')
-              // .attr('stroke-width','2')
+      svg.selectAll('circle')
+        .data(tempData)
+        .transition()
+        .duration(1000)
+        .attr('cy',function(d){
+          return y_scale(d[1]);
+        })
     }
-
-
   }
 
-
-
   render(){
-    // if(!this.props.weather.list) return null;
-    // console.log(this.props.weather.list)
-
     return(
       <div id='chart'></div>
     )
