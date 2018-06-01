@@ -22,12 +22,14 @@ class Chart extends React.Component{
 
   componentDidUpdate(){
     console.log('componentDidUpdate')
-    let chart_height = 300;
+    let chart_height = 200;
     let chart_width = 600;
     let padding = 20;
 
     let tempData = chartUtil(this.props.weather.list);
 
+    //if there is no svg yet, add the svg, and do all the waiting room stuff
+    //the check is to see if the chart div element has any svg children;
     if(document.querySelector('#chart') && document.querySelector('#chart').children.length === 0){
 
 
@@ -51,7 +53,7 @@ class Chart extends React.Component{
 
 
       var y_axis = d3.axisLeft(y_scale)
-      // .tickValues([0,100,200,300])
+        // .tickValues([20,40,60,80,100,120])
 
       svg.append('g')
         .attr('class','y-axis')
@@ -69,7 +71,7 @@ class Chart extends React.Component{
           return x_scale(d[0])
         })
         .attr('cy',function(d){
-          return y_scale(d[1])
+          return y_scale(d[1]);
         })
         .attr('r','2px')
         .attr('fill','darkblue')
@@ -78,6 +80,8 @@ class Chart extends React.Component{
         console.log(svg.selectAll('circle')._groups[0])
 
     }else{
+      //for updating the graph, when user enters a new zip code: don't have to make a new svg,
+      //don't have to use waiting room, we can use the circle elements that already exist
       let svg = d3.select('#chart')
             let y_scale = d3.scaleLinear()
 
@@ -104,7 +108,7 @@ class Chart extends React.Component{
               //   return x_scale(d[0])
               // })
               .attr('cy',function(d){
-                return y_scale(d[1])
+                return y_scale(d[1]);
               })
               // .attr('r','2px')
               // .attr('fill','darkblue')
