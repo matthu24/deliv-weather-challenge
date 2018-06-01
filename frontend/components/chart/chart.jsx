@@ -99,7 +99,7 @@ class Chart extends React.Component{
   render(){
     if(!this.props.weather.city) return null;
     return(
-      <div>
+      <div className='chart-container'>
         {this.props.weather.city.name}, {this.props.zip}
 
         <div id='chart'></div>
